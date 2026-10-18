@@ -15,7 +15,7 @@ Task, feature or route, expected behaviour, acceptance criteria, spec or ticket 
 
 ## Steps
 
-1. **Map.** Run map-feature on every existing flow the feature touches. A new feature with no existing flow: map the nearest sibling flow and the entry point where the new one attaches.
+1. **Map.** Run map-feature on every existing flow the feature touches. A new feature with no existing flow: map the nearest sibling flow and the entry point where the new one attaches. The current behaviour counts as understood only when every Flow line the task touches has a `file:line` and each touched flow has been run in the browser and recorded as **observed**. Nothing after this step starts before that. Once it is, continue to step 2 in the same run: mapping is the gate, not the deliverable.
 2. **Declare changes.** Before any code, fill the map's "Intended behaviour changes" table: every user-visible, network, or state difference the task requires, each with its reason tied to the acceptance criteria. Anything not in the table must stay identical to the oracle. Keep the table current as understanding changes.
 3. **Implement.** Existing patterns, smallest diff, no adjacent cleanup. Check the repo's documented rules while writing, not at review time (L019). **REQUIRED SUB-SKILL:** superpowers:test-driven-development wherever the repo has a unit seam for the change. Shared state or contracts with consumers outside this app get those consumers checked before the change lands (L009).
 4. **Verify on the clean tree.** Run "Clean verification" from map-feature with the acceptance flows as the target.

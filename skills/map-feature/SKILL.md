@@ -5,7 +5,7 @@ description: Use before changing any code in a web app feature you have not trac
 
 # Map feature
 
-Establish how the feature behaves today, from runtime evidence, and write it down once so every later step and session reuses it. Nothing is changed in this skill. Scale depth to the task: a one-file text change needs Boundaries and the one Flow step it touches; anything touching state, requests, flags, or shared code gets every section.
+Establish how the feature behaves today, from runtime evidence, and write it down once so every later step and session reuses it. Nothing is changed in this skill. Run as step 1 of fix-bug or build-feature, it ends by handing back to that skill's next step, not with a report or a stop. Scale depth to the task: a one-file text change needs Boundaries and the one Flow step it touches; anything touching state, requests, flags, or shared code gets every section.
 
 ## Inputs
 

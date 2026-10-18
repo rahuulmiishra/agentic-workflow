@@ -15,7 +15,7 @@ Task (the bug), feature or route, expected behaviour, reproduction steps, accept
 
 ## Steps
 
-1. **Map and reproduce.** Run map-feature with the bug's reproduction as the target flow. The bug counts as reproduced only when the wrong behaviour has been observed live in the browser and recorded under Findings as **observed**. Nothing after this step starts before that.
+1. **Map and reproduce.** Run map-feature with the bug's reproduction as the target flow. The bug counts as reproduced only when the wrong behaviour has been observed live in the browser and recorded under Findings as **observed**. Nothing after this step starts before that. Once it is, continue to step 2 in the same run: reproducing is the gate, not the deliverable.
 2. **Localize.** Walk the map's Flow and find the first step where observed diverges from expected. Name the mechanism at `file:line` with the evidence that shows it (network payload, state value, console line). A fix hypothesis that cannot name the mechanism is not ready. If a fix does not work, do not patch the same theory again: diff against a working sibling flow or an earlier commit (L028).
 3. **Fix surgically.** Smallest change at the mechanism, in the repo's existing patterns. No adjacent cleanup, no renames, no formatting. Delete imports or variables the change orphaned. Append the cause and the fix to the map's Findings.
 4. **Verify on the clean tree.** Run "Clean verification" from map-feature with the bug's reproduction as the target flow.
